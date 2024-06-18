@@ -1,0 +1,32 @@
+import scratchattach as scratch3
+import time
+numbers_of_curators = 1
+num = -1
+names = []
+offset =  900
+username = "#username"
+session = scratch3.login(username,"#password")
+user = scratch3.get_user("#the Scratcher that you wanna add from his followers") #Suggest @griffpatch since his followers keeps rising non stop + updating
+studio = session.connect_studio("#ID of your studio")
+
+user_name = []
+user_name = user.follower_names(limit=40, offset=offset)
+
+#Every account are only avaliable adding 100 per hour. Basically you can make a list of accounts and change the username after getting 100 curators added. (Variable = username)
+#NOTICE: Haven't made list yet. Lazy...
+names.append('')
+names.append('')
+names.append('')
+
+while True:
+   if num < 39: 
+      num = num +1
+   else:
+      num = 0
+      offset= offset + 40
+      user_name = []
+      user_name = user.follower_names(limit=40, offset=offset)
+   invite = (user_name[num])
+   studio.invite_curator(invite)
+   print(f"{invite} | Count: {numbers_of_curators}")
+   numbers_of_curators = numbers_of_curators + 1

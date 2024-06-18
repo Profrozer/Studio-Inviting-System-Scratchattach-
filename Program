@@ -13,7 +13,7 @@ user_name = []
 user_name = user.follower_names(limit=40, offset=offset)
 
 #Every account are only avaliable adding 100 per hour. Basically you can make a list of accounts and change the username after getting 100 curators added. (Variable = username)
-#NOTICE: Haven't made list yet. Lazy...
+#NOTICE: Haven't made list yet. Lazy..
 names.append('')
 names.append('')
 names.append('')
